@@ -1,0 +1,56 @@
+{
+    "mem_topology": {
+        "m_count": "7",
+        "m_mem_data": [
+            {
+                "m_type": "MEM_DDR4",
+                "m_used": "0",
+                "m_sizeKB": "0x1000000",
+                "m_tag": "bank0",
+                "m_base_address": "0x4000000000"
+            },
+            {
+                "m_type": "MEM_DDR4",
+                "m_used": "1",
+                "m_sizeKB": "0x1000000",
+                "m_tag": "bank1",
+                "m_base_address": "0x5000000000"
+            },
+            {
+                "m_type": "MEM_DDR4",
+                "m_used": "0",
+                "m_sizeKB": "0x1000000",
+                "m_tag": "bank2",
+                "m_base_address": "0x6000000000"
+            },
+            {
+                "m_type": "MEM_DDR4",
+                "m_used": "0",
+                "m_sizeKB": "0x1000000",
+                "m_tag": "bank3",
+                "m_base_address": "0x7000000000"
+            },
+            {
+                "m_type": "MEM_DRAM",
+                "m_used": "0",
+                "m_sizeKB": "0x80",
+                "m_tag": "PLRAM[0]",
+                "m_base_address": "0x3000000000"
+            },
+            {
+                "m_type": "MEM_DRAM",
+                "m_used": "0",
+                "m_sizeKB": "0x80",
+                "m_tag": "PLRAM[1]",
+                "m_base_address": "0x3000200000"
+            },
+            {
+                "m_type": "MEM_DRAM",
+                "m_used": "0",
+                "m_sizeKB": "0x80",
+                "m_tag": "PLRAM[2]",
+                "m_base_address": "0x3000400000"
+            }
+        ]
+    }
+}

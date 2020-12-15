@@ -1,0 +1,55 @@
+{
+    "ip_layout": {
+        "m_count": "7",
+        "m_ip_data": [
+            {
+                "m_type": "IP_KERNEL",
+                "m_int_enable": "1",
+                "m_interrupt_id": "0",
+                "m_ip_control": "AP_CTRL_CHAIN",
+                "m_base_address": "0x1800000",
+                "m_name": "vadd:vadd_1"
+            },
+            {
+                "m_type": "IP_KERNEL",
+                "m_int_enable": "1",
+                "m_interrupt_id": "0",
+                "m_ip_control": "AP_CTRL_CHAIN",
+                "m_base_address": "0x1810000",
+                "m_name": "vadd:vadd_2"
+            },
+            {
+                "m_type": "IP_KERNEL",
+                "m_int_enable": "1",
+                "m_interrupt_id": "0",
+                "m_ip_control": "AP_CTRL_CHAIN",
+                "m_base_address": "0x1820000",
+                "m_name": "vadd:vadd_3"
+            },
+            {
+                "m_type": "IP_DDR4_CONTROLLER",
+                "properties": "0x0",
+                "m_base_address": "0x1000000",
+                "m_name": "AXI-LITE-BANK0"
+            },
+            {
+                "m_type": "IP_DDR4_CONTROLLER",
+                "properties": "0x1",
+                "m_base_address": "0x70000",
+                "m_name": "AXI-LITE-BANK1"
+            },
+            {
+                "m_type": "IP_DDR4_CONTROLLER",
+                "properties": "0x2",
+                "m_base_address": "0x1010000",
+                "m_name": "AXI-LITE-BANK2"
+            },
+            {
+                "m_type": "IP_DDR4_CONTROLLER",
+                "properties": "0x3",
+                "m_base_address": "0x1020000",
+                "m_name": "AXI-LITE-BANK3"
+            }
+        ]
+    }
+}
