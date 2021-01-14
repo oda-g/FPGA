@@ -12,6 +12,10 @@
 #include <time.h>
 #include <sys/mman.h>
 
+/* Note: This program is based on OpenCL 1.2.
+ * clCreateCommandQueue and clEnqueueTask are deprecated in the
+ * later version.
+ */
 #define CL_USE_DEPRECATED_OPENCL_1_2_APIS
 #include <CL/opencl.h>
 
@@ -43,7 +47,7 @@ int main(void)
 
 	/* NOTE: Resouces are not freed explicitly in case of failure
 	 * because the program will exit immediately in case of
-	 * failure and resouces will be freed implicitly at that time.
+	 * failure and resources will be freed implicitly at that time.
 	 */
 
 	cpu_out = (cl_int *)malloc(sizeof(cl_int) * DATA_SIZE);
