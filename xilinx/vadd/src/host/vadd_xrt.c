@@ -127,12 +127,6 @@ int main(void)
 		perror("xclAllocBO out");
 		return 1;
 	}
-	LOG("xclAllocBO cmd\n");
-	bo_cmd = xclAllocBO(dev_handle, (size_t)CMD_SIZE, 0, XCL_BO_FLAGS_EXECBUF);
-	if (bo_cmd == XRT_NULL_BO) {
-		perror("xclAllocBO cmd");
-		return 1;
-	}
 
 	LOG("xclGetBOProperties in1\n");
 	if (xclGetBOProperties(dev_handle, bo_in1, &bo_prop) != 0) {
@@ -173,12 +167,6 @@ int main(void)
 		perror("xclMapBO out");
 		return 1;
 	}
-	LOG("xclMapBO cmd\n");
-	start_cmd = (struct ert_start_kernel_cmd *)xclMapBO(dev_handle, bo_cmd, true);
-	if (start_cmd == NULL) {
-		perror("xclMapBO cmd");
-		return 1;
-	}
 
 	srand((unsigned int)time(NULL));
 	for (i = 0; i < DATA_SIZE; i++) {
@@ -196,6 +184,22 @@ int main(void)
 	LOG("xclSyncBO in2\n");
 	if (xclSyncBO(dev_handle, bo_in2, XCL_BO_SYNC_BO_TO_DEVICE, data_len, 0) != 0) {
 		perror("xclSyncBO in2");
+		return 1;
+	}
+
+	/* kernel execution */
+
+	LOG("xclAllocBO cmd\n");
+	bo_cmd = xclAllocBO(dev_handle, (size_t)CMD_SIZE, 0, XCL_BO_FLAGS_EXECBUF);
+	if (bo_cmd == XRT_NULL_BO) {
+		perror("xclAllocBO cmd");
+		return 1;
+	}
+
+	LOG("xclMapBO cmd\n");
+	start_cmd = (struct ert_start_kernel_cmd *)xclMapBO(dev_handle, bo_cmd, true);
+	if (start_cmd == NULL) {
+		perror("xclMapBO cmd");
 		return 1;
 	}
 
