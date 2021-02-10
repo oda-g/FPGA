@@ -223,16 +223,11 @@ int main(void)
 		return 1;
 	}
 
-	while (1) {
-		LOG("xclExecWait\n");
-		ret = xclExecWait(dev_handle, 1000);
-		if (ret < 0) {
-			perror("xclExecWait");
-			return 1;
-		}
-		if (ret > 0) {
-			break;
-		}
+	LOG("xclExecWait\n");
+	ret = xclExecWait(dev_handle, -1);
+	if (ret < 0) {
+		perror("xclExecWait");
+		return 1;
 	}
 
 	/* check timestamps */
